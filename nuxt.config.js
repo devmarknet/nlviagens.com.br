@@ -11,12 +11,13 @@ export default {
       { hid: 'description', name: 'description', content: '' },
       { name: 'format-detection', content: 'telephone=no' },
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+    link: [{ rel: 'icon', type: 'image/png', href: '/favicon.png' }],
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
-    '@/assets/main.css'
+    '@/assets/main.css',
+    '@/assets/fonts/stylesheet.css'
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
@@ -52,7 +53,10 @@ export default {
   graphql: {
     clients: {
       admin: {
-        endpoint: process.env.BASE_URL
+        endpoint: `${process.env.BASE_URL}/graphql`
+      },
+      assets: {
+        endpoint: `${process.env.BASE_URL}/assets`
       }
     }
   }
