@@ -5,33 +5,49 @@ export default {
   name: 'NavBarComponent',
   components: {
     LogoComponent,
-    LogoDarkComponent
+    LogoDarkComponent,
   },
-  mounted () {
+  data() {
+    return {
+      scrolled: false,
+    }
+  },
+  mounted() {
     window.addEventListener('scroll', (e) => {
-      if (window.scrollY > 30) {
-        this.scrollNav = true
+      if (window.scrollY > 36) {
+        this.scrolled = true
       } else {
-        this.scrollNav = false
+        this.scrolled = false
       }
     })
   },
-  data () {
-    return {
-      scrollNav : ''
-    }
-  }
 }
 </script>
 
 <template>
-  <nav id="nav" :class="`nav ${scrollNav ? 'bg-white' : 'bg-transparent'}`">
-    <div class="container">
-      <NuxtLink to="/">
-        <LogoDarkComponent v-if="scrollNav" />
-        <LogoComponent v-else/>
-      </NuxtLink>
-      <ul :class="`menu ${scrollNav ? 'text-dark-blue border-dark-blue' : 'text-white border-white'}`">
+  <nav
+    :class="`z-50 w-full top-0 transition-all duration-200 flex items-center ${
+      scrolled
+        ? 'bg-white fixed shadow-lg shadow-black/5 h-20 pt-0'
+        : 'absolute bg-transparent h-32 pt-9'
+    }`"
+  >
+    <div class="mx-auto container max-w-7xl flex items-center justify-between">
+      <ul class="flex">
+        <li>
+          <NuxtLink to="/">
+            <LogoDarkComponent v-if="scrolled" />
+            <LogoComponent v-else />
+          </NuxtLink>
+        </li>
+      </ul>
+      <ul
+        :class="`flex gap-10 w-full flex-1 justify-center items-center ${
+          scrolled
+            ? 'text-dark-blue border-dark-blue'
+            : 'text-white border-white'
+        }`"
+      >
         <li class="item">
           <NuxtLink class="link" to="/">Home</NuxtLink>
         </li>
@@ -48,80 +64,28 @@ export default {
           <NuxtLink class="link" to="/galeria">Galeria</NuxtLink>
         </li>
       </ul>
-      <a class="button" href="">Contate-nos</a>
+      <ul class="flex justify-end">
+        <li>
+          <a
+            class="py-4 px-8 bg-[#0050BE] rounded-lg text-white font-bold"
+            href=""
+            >Contate-nos</a
+          >
+        </li>
+      </ul>
     </div>
   </nav>
 </template>
 
 <style lang="postcss" scoped>
-.nav {
-  @apply
-    z-[55]
-    top-0
-    fixed
-    w-full
-    max-xl:h-0
-    py-5
-    ;
-    & .container {
-      @apply
-        flex
-        items-center
-        justify-around
-        mx-auto
-        bg-transparent
-      ;
+.item {
+  & .link {
+    @apply opacity-50;
+  }
 
-      & .button {
-        @apply
-          text-white
-          font-bold
-          px-8
-          py-4
-          rounded-lg
-          bg-blue
-          cursor-pointer
-          max-w-max
-          transition-all
-        ;
-      }
-
-      & .button:hover{
-        @apply
-          bg-dark-blue
-        ;
-      }
-    }
-  & .menu {
-    @apply
-      py-9
-      flex
-      w-max
-      gap-5
-      flex-col
-      xl:gap-14
-      xl:flex-row
-    ;
-    & .link {
-      @apply
-        opacity-50
-        duration-100
-        transition-opacity
-      ;
-      &:hover {
-        @apply
-          opacity-100
-        ;
-      }
-      &.nuxt-link-exact-active {
-        @apply
-          font-black
-          opacity-100
-          tracking-wide
-          border-b-2
-        ;
-      }
-    }
+  & .nuxt-link-exact-active,
+  & .nuxt-link-active {
+    @apply opacity-100;
   }
 }
 </style>
