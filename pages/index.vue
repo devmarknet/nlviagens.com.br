@@ -6,49 +6,49 @@ import PromotionsComponent from '@/components/home/Promotions.vue'
 import AboutComponent from '@/components/home/About.vue'
 
 export default {
+  name: 'IndexPage',
   components: {
     HeaderComponent,
     ServicesComponent,
     PromotionsComponent,
-    AboutComponent
-    },
-  name: 'IndexPage',
+    AboutComponent,
+  },
+  layout: 'web',
   async asyncData({ $graphql }) {
-     const query = gql`
-        query {
-          main_section {
-            title
-            sub_title
-            action_text
-            action
-            file {
-              id
-            }
-            status
+    const query = gql`
+      query {
+        main_section {
+          title
+          sub_title
+          action_text
+          action
+          file {
+            id
           }
-          about {
-            title
-            text
-            image {
-              id
-            }
+          status
+        }
+        about {
+          title
+          text
+          image {
+            id
           }
         }
-      `
+      }
+    `
     const data = await $graphql.admin.request(query)
     return {
-      data
+      data,
     }
-  }
-
+  },
 }
 </script>
 
 <template>
-  <div>
-    <header-component :headerProps="data"/>
+  <main>
+    <HeaderComponent :headerProps="data" />
     <ServicesComponent />
     <PromotionsComponent />
     <AboutComponent :aboutProps="data" />
-  </div>
+  </main>
 </template>

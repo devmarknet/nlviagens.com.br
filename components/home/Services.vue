@@ -1,6 +1,43 @@
 <script>
 export default {
   name: 'ServicesComponent',
+  data() {
+    return {
+      items: [
+        {
+          url: '/servicos/passagens-rodoviarias',
+          image: 'passagens-rodoviarias.jpeg',
+          list: ['Expresso Maringá', 'Viação Garcia', 'Brasil Sul'],
+          title: 'Passagens Rodoviárias',
+        },
+        {
+          url: '/servicos/fretamento',
+          image: 'fretamento.jpeg',
+          list: [
+            'Fretamos para Grupos e/ou Empresas, aeronaves de pequeno, médio porte...',
+          ],
+          title: 'Fretamento',
+        },
+        {
+          url: '/servicos/acessoria',
+          image: 'acessoria.jpeg',
+          list: ['Passaportes', 'Vacinas Internacionais', 'Visto Consular'],
+          title: 'Acessoria',
+        },
+        {
+          url: '/servicos/corporativo',
+          image: 'corporativo.jpeg',
+          list: [
+            'Passagens aéreas',
+            'Terminiais de reserva online',
+            'Seguros de Viagens',
+          ],
+          title: 'Corporativo',
+        },
+      ],
+    }
+  },
+  created() {},
 }
 </script>
 
@@ -17,20 +54,34 @@ export default {
       </p>
     </div>
     <ul class="grid grid-cols-4 gap-9">
-      <li class="flex-1" v-for="i in 4" :key="i">
-        <a href="#card">
-          <div class="w-[296px]">
-            <img src="" alt="" />
-            <ul>
-              <li>Expresso Maringá</li>
-              <li>Viação Garcial</li>
-              <li>Brasil Sul</li>
+      <li v-for="i in items" :key="i.title" class="flex-1">
+        <NuxtLink :to="i.url">
+          <div class="w-full relative rounded-t-lg overflow-hidden">
+            <img
+              :src="require(`~/assets/images/${i.image}`)"
+              alt="Illustration Passagens Rodoviárias"
+            />
+            <ul
+              v-if="typeof i.list === 'object'"
+              class="absolute top-0 flex flex-col justify-end h-full w-full bg-black/30 text-white p-4"
+            >
+              <li v-for="item in i.list" :key="item">
+                {{ item }}
+              </li>
             </ul>
           </div>
-          <span>Passagens Rodoviárias</span>
-        </a>
+          <span
+            class="flex bg-zinc-100 w-full text-sm font-title uppercase font-bold p-4 rounded-b-lg"
+            >{{ i.title }}</span
+          >
+        </NuxtLink>
       </li>
     </ul>
+    <NuxtLink
+      class="text-white font-bold px-8 py-4 rounded-lg bg-blue cursor-pointer max-w-max transition-all"
+      to="/servicos"
+      >Veja mais detalhes</NuxtLink
+    >
   </section>
 </template>
 

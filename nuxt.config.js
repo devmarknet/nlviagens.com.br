@@ -1,9 +1,9 @@
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'nlviagens.com.br',
+    title: 'NL Viagens Nilsara',
     htmlAttrs: {
-      lang: 'en',
+      lang: 'pt-BR',
     },
     meta: [
       { charset: 'utf-8' },
@@ -15,10 +15,7 @@ export default {
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
-  css: [
-    '@/assets/main.css',
-    '@/assets/fonts/stylesheet.css'
-  ],
+  css: ['@/assets/main.css', '@/assets/fonts/stylesheet.css'],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [],
@@ -34,7 +31,6 @@ export default {
     '@nuxtjs/eslint-module',
     // https://go.nuxtjs.dev/tailwindcss
     '@nuxtjs/tailwindcss',
-
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
@@ -53,11 +49,11 @@ export default {
   graphql: {
     clients: {
       admin: {
-        endpoint: `${process.env.BASE_URL}/graphql`
+        endpoint: `${process.env.BASE_URL}/graphql`,
       },
       assets: {
-        endpoint: `${process.env.BASE_URL}/assets`
-      }
-    }
-  }
+        endpoint: `${process.env.BASE_URL}/assets`,
+      },
+    },
+  },
 }

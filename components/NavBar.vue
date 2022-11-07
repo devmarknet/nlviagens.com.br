@@ -66,9 +66,7 @@ export default {
       </ul>
       <ul class="flex justify-end">
         <li>
-          <a
-            class="py-4 px-8 bg-[#0050BE] rounded-lg text-white font-bold"
-            href=""
+          <a class="py-4 px-8 bg-blue rounded-lg text-white font-bold" href=""
             >Contate-nos</a
           >
         </li>
