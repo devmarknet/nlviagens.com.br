@@ -33,7 +33,7 @@ export default {
     }`"
   >
     <div class="mx-auto container max-w-7xl flex items-center justify-between">
-      <ul class="flex">
+      <ul class="flex w-40">
         <li>
           <NuxtLink to="/">
             <LogoDarkComponent v-if="scrolled" />
@@ -64,9 +64,11 @@ export default {
           <NuxtLink class="link" to="/galeria">Galeria</NuxtLink>
         </li>
       </ul>
-      <ul class="flex justify-end">
-        <li>
-          <a class="py-4 px-8 bg-blue rounded-lg text-white font-bold" href=""
+      <ul class="flex w-40 justify-end">
+        <li class="flex">
+          <a
+            class="py-4 text-center px-6 bg-blue rounded-lg w-full text-white font-bold"
+            href=""
             >Contate-nos</a
           >
         </li>
@@ -81,8 +83,7 @@ export default {
     @apply opacity-50;
   }
 
-  & .nuxt-link-exact-active,
-  & .nuxt-link-active {
+  & .nuxt-link-exact-active {
     @apply opacity-100;
   }
 }

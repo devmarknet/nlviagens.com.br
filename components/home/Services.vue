@@ -69,6 +69,12 @@ export default {
                 {{ item }}
               </li>
             </ul>
+            <p
+              v-else
+              class="absolute top-0 flex flex-col justify-end h-full w-full bg-black/30 text-white p-4"
+            >
+              {{ item }}
+            </p>
           </div>
           <span
             class="flex bg-zinc-100 w-full text-sm font-title uppercase font-bold p-4 rounded-b-lg"
