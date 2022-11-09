@@ -18,7 +18,12 @@ export default {
   css: ['@/assets/main.css', '@/assets/fonts/stylesheet.css'],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [],
+  plugins: [
+    {
+      src: '~/plugins/v-html-secure',
+      mode: 'client',
+    },
+  ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
