@@ -46,9 +46,11 @@ export default {
       </div>
     </header>
     <main class="container mx-auto max-w-7xl flex flex-col gap-20 mb-20">
-      {{ promotionalPackages }}
       <section v-for="pkg in promotionalPackages" :key="pkg.id">
-        <div class="flex items-center gap-11">
+        <div
+          v-if="pkg.promotional_packages.length"
+          class="flex items-center gap-11"
+        >
           <h3 class="text-2xl font-title font-medium text-gray">
             {{ pkg.title }}
           </h3>
@@ -60,7 +62,10 @@ export default {
             <a class="py-1" href="">Internacional</a>
           </div>
         </div>
-        <div class="w-full grid grid-cols-4 gap-8 py-6">
+        <div
+          v-if="pkg.promotional_packages.length"
+          class="w-full grid grid-cols-4 gap-8 py-6"
+        >
           <NuxtLink
             v-for="promo in pkg.promotional_packages"
             :key="promo.promotions_id.id"

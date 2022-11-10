@@ -41,7 +41,7 @@ export default {
           />
         </NuxtLink>
       </div>
-      <a class="button" href="">Veja mais promoções</a>
+      <NuxtLink class="button" to="/promocoes">Veja mais promoções</NuxtLink>
     </div>
   </div>
 </template>
