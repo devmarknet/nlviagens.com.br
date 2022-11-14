@@ -20,10 +20,12 @@ export default {
         }
       }
     `
+    const assets = $graphql.assets.url
     const { services } = await $graphql.admin
       .request(query)
       .then((data) => data)
-    return { services }
+
+    return { services, assets }
   },
 }
 </script>
@@ -42,8 +44,7 @@ export default {
         </p>
       </div>
     </header>
-    <main class="container mx-auto max-w-7xl grid gap-20 mb-20">
-      {{ services[0] }}
+    <main class="container mx-auto max-w-7xl grid xl:grid-cols-2 gap-8 mb-20">
       <div
         v-for="service in services"
         :key="service.id"
@@ -51,11 +52,11 @@ export default {
       >
         <div class="relative">
           <img
-            :src="require('~/assets/images/passagens-rodoviarias.jpeg')"
-            alt=""
+            :src="`${assets}/${service.cover.id}`"
+            :alt="`Image from ${service.title}`"
           />
           <div
-            class="absolute flex w-full gap-2 items-end justify-between bottom-0 p-5"
+            class="absolute flex w-full gap-2 items-end justify-between bottom-0 p-5 h-full bg-black/30"
           >
             <h2 class="text-3xl font-bold w-64 text-white">
               {{ service.title }}
@@ -67,7 +68,10 @@ export default {
             >
           </div>
         </div>
-        <div v-html-safe="service.content" class="p-5" />
+        <div
+          v-html-safe="service.content"
+          class="p-5 content flex max-w-[624px]"
+        />
         <!-- <div class="list-disc list-inside p-5">{{ service.content }}</div> -->
       </div>
     </main>
@@ -75,10 +79,7 @@ export default {
 </template>
 
 <style lang="postcss">
-ul {
-  @apply list-disc list-inside;
-}
-.article {
+.content {
   & h1,
   h2,
   h3 {
