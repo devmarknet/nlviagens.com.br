@@ -50,7 +50,7 @@ export default {
 .container {
   @apply bg-dark-blue
       flex
-      py-3
+      py-32
       min-w-full
       mx-auto
       items-center

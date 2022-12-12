@@ -4,6 +4,7 @@ import HeaderComponent from '@/components/home/Header.vue'
 import ServicesComponent from '@/components/home/Services.vue'
 import PromotionsComponent from '@/components/home/Promotions.vue'
 import AboutComponent from '@/components/home/About.vue'
+import NewsComponent from '@/components/home/News.vue'
 
 export default {
   name: 'IndexPage',
@@ -12,6 +13,7 @@ export default {
     ServicesComponent,
     PromotionsComponent,
     AboutComponent,
+    NewsComponent,
   },
   layout: 'web',
   async asyncData({ $graphql }) {
