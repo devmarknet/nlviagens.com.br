@@ -60,9 +60,10 @@ export default {
         <li class="item">
           <NuxtLink class="link" to="/servicos">Serviços</NuxtLink>
         </li>
+        <!--
         <li class="item">
           <NuxtLink class="link" to="/galeria">Galeria</NuxtLink>
-        </li>
+        </li> -->
       </ul>
       <ul class="flex w-40 justify-end">
         <li class="flex">
