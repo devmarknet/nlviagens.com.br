@@ -50,12 +50,11 @@ export default {
 .container {
   @apply bg-dark-blue
       flex
-      px-80
-      py-32
-      w-full
+      py-3
+      min-w-full
+      mx-auto
       items-center
       justify-center
-      min-w-full
       overflow-hidden;
 
   & .box-content {
@@ -63,6 +62,7 @@ export default {
         flex
         flex-col
         gap-4
+        max-w-7xl
         justify-center
         items-center;
 

@@ -47,11 +47,10 @@ export default {
     overflow-hidden;
   .container {
     @apply flex
-      px-80
       py-60
-      w-full
+      mx-auto
+      max-w-7xl
       items-center
-      min-w-full
       min-h-[65vh]
       xl:min-h-[88vh]
       overflow-hidden;

@@ -50,5 +50,6 @@ export default {
     <ServicesComponent />
     <PromotionsComponent />
     <AboutComponent :aboutProps="data" />
+    <NewsComponent />
   </main>
 </template>

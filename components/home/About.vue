@@ -2,13 +2,13 @@
 export default {
   name: 'AboutComponent',
   props: {
-    aboutProps: { type: Object }
+    aboutProps: { type: Object },
   },
   methods: {
-    getImage (uuid) {
+    getImage(uuid) {
       return `${this.$graphql.assets.url}/${uuid}`
-    }
-  }
+    },
+  },
 }
 </script>
 
@@ -21,57 +21,44 @@ export default {
       <a class="button" href="/a-empresa" title="Conheça mais">Conheça mais</a>
     </div>
     <div class="box-image">
-      <img :src="getImage(aboutProps.about.image.id)" alt="" class="image">
+      <img :src="getImage(aboutProps.about.image.id)" alt="" class="image" />
     </div>
   </div>
 </template>
 
-
 <style lang="postcss" scoped>
-  .container {
-    @apply
-      flex
-      px-80
+.container {
+  @apply flex
       py-32
       gap-[60px]
-      w-full
+      mx-auto
       items-center
       justify-center
-      min-w-full
-      overflow-hidden
-    ;
+      max-w-7xl
+      overflow-hidden;
 
-    & .box-text {
-      @apply
-        text-gray
-        max-w-2xl
-      ;
+  & .box-text {
+    @apply text-gray
+        max-w-2xl;
 
-      & .span {
-        @apply
-          font-semibold
-        ;
-      }
+    & .span {
+      @apply font-semibold;
+    }
 
-      & .title {
-        @apply
-          text-[32px]
+    & .title {
+      @apply text-[32px]
           leading-9
           font-title
           mt-4
-          mb-10
-        ;
-      }
+          mb-10;
+    }
 
-      & .text {
-        @apply
-          mb-14
-        ;
-      }
+    & .text {
+      @apply mb-14;
+    }
 
-      & .button {
-        @apply
-          text-white
+    & .button {
+      @apply text-white
           font-bold
           px-8
           py-4
@@ -79,23 +66,18 @@ export default {
           bg-blue
           cursor-pointer
           max-w-max
-          transition-all
-        ;
-      }
-
-      & .button:hover{
-        @apply
-          bg-dark-blue
-        ;
-      }
+          transition-all;
     }
 
-    & .box-image {
-      & .image {
-        @apply
-          rounded-2xl
-        ;
-      }
+    & .button:hover {
+      @apply bg-dark-blue;
     }
   }
+
+  & .box-image {
+    & .image {
+      @apply rounded-2xl;
+    }
+  }
+}
 </style>

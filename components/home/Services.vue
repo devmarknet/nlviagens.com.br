@@ -94,12 +94,11 @@ export default {
 <style lang="postcss" scoped>
 .container {
   @apply flex
-      px-80
+      mx-auto
+      max-w-7xl
       py-32
-      w-full
       items-center
       justify-center
-      min-w-full
       overflow-hidden;
 
   & .box-info {
