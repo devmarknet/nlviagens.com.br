@@ -40,7 +40,7 @@ export default {
 
 <template>
   <div>
-    <header class="pt-40 pb-16 bg-darkest-blue mb-20">
+    <header class="pt-40 pb-16 bg-darkest-blue mb-10 xl:mb-20">
       <div class="container mx-auto max-w-7xl">
         <span class="w-20 border-t border-yellow block mx-auto"></span>
         <h1 class="text-center text-white my-6 text-4xl font-medium">
@@ -52,8 +52,10 @@ export default {
         </p>
       </div>
     </header>
-    <main class="container mx-auto max-w-7xl flex gap-20 mb-20">
-      <aside class="flex flex-col gap-8">
+    <main
+      class="container mx-auto max-w-7xl flex flex-col xl:flex-row gap-10 xl:gap-20 mb-10 xl:mb-20"
+    >
+      <aside class="flex flex-col gap-4 xl:gap-8">
         <img
           width="448"
           class="rounded-lg overflow-hidden xl:min-w-[448px]"
@@ -86,7 +88,7 @@ export default {
         </h3>
         <p v-html-safe="promo.article" class="article" />
         <a
-          class="mt-10 block w-max text-white font-bold px-8 py-4 rounded-lg bg-blue hover:bg-dark-blue cursor-pointer max-w-max transition-all"
+          class="mt-10 block w-auto xl:w-max text-white font-bold px-4 xl:px-8 py-2 xl:py-4 rounded-lg bg-blue hover:bg-dark-blue cursor-pointer max-w-max transition-all text-center"
           href=""
           >Contate-nos para mais detalhes</a
         >
@@ -96,7 +98,7 @@ export default {
       <h3 class="text-xl text-gray font-semibold">
         Outros pacotes promocionais
       </h3>
-      <div class="w-full grid grid-cols-4 gap-8 py-6">
+      <div class="w-full grid grid-cols-2 xl:grid-cols-4 gap-4 xl:gap-8 py-6">
         <NuxtLink
           v-for="promotion in otherPromotions"
           :key="promotion.id"
