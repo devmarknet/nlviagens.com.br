@@ -39,7 +39,7 @@ export default {
         Veja o que nossos clientes pensam de nossos serviços
       </h2>
     </div>
-    <ul class="grid grid-cols-4 gap-9">
+    <ul class="grid grid-cols-2 xl:grid-cols-4 gap-4 xl:gap-9">
       <li
         v-for="i in items"
         :key="i.title"
@@ -66,7 +66,8 @@ export default {
   @apply flex
       mx-auto
       max-w-7xl
-      py-32
+      py-16
+      xl:py-32
       overflow-hidden;
 
   & .box-info {

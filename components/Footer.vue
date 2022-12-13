@@ -10,16 +10,17 @@ export default {
 </script>
 
 <template>
-  <footer class="bg-darkest-blue text-white text-sm py-24">
+  <footer class="bg-darkest-blue text-white text-sm py-16 xl:py-24">
     <div
-      class="container mx-auto max-w-7xl flex items-stretch justify-between gap-20"
+      class="container mx-auto max-w-7xl flex flex-col xl:flex-row items-stretch justify-between gap-20"
     >
       <img
+        class="w-40 xl:w-auto"
         :src="require('~/assets/images/footer-logo.png')"
         alt="Footer Logo NL Viagens Nilsara"
       />
       <div class="flex-1 flex flex-col">
-        <div class="flex flex-1 justify-between">
+        <div class="flex flex-col xl:flex-row flex-1 justify-between">
           <div>
             <h3 class="mb-4">Fale com um de nossos acessores</h3>
             <ul class="text-white/50 flex flex-col gap-3">

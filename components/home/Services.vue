@@ -5,13 +5,13 @@ export default {
     return {
       items: [
         {
-          url: '/servicos/passagens-rodoviarias',
+          url: '/servicos',
           image: 'passagens-rodoviarias.jpeg',
           list: ['Expresso Maringá', 'Viação Garcia', 'Brasil Sul'],
           title: 'Passagens Rodoviárias',
         },
         {
-          url: '/servicos/fretamento',
+          url: '/servicos',
           image: 'fretamento.jpeg',
           list: [
             'Fretamos para Grupos e/ou Empresas, aeronaves de pequeno, médio porte...',
@@ -19,13 +19,13 @@ export default {
           title: 'Fretamento',
         },
         {
-          url: '/servicos/acessoria',
+          url: '/servicos',
           image: 'acessoria.jpeg',
           list: ['Passaportes', 'Vacinas Internacionais', 'Visto Consular'],
           title: 'Acessoria',
         },
         {
-          url: '/servicos/corporativo',
+          url: '/servicos',
           image: 'corporativo.jpeg',
           list: [
             'Passagens aéreas',
@@ -53,7 +53,7 @@ export default {
         dá um diferencial na ampla demanda de nossos clientes.
       </p>
     </div>
-    <ul class="grid grid-cols-4 gap-9">
+    <ul class="grid grid-cols-1 xl:grid-cols-4 gap-4 xl:gap-9">
       <li v-for="i in items" :key="i.title" class="flex-1">
         <NuxtLink :to="i.url">
           <div class="w-full relative rounded-t-lg overflow-hidden">
@@ -96,7 +96,8 @@ export default {
   @apply flex
       mx-auto
       max-w-7xl
-      py-32
+      py-16
+      xl:py-32
       items-center
       justify-center
       overflow-hidden;

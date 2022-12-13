@@ -6,7 +6,7 @@ export default {
 
 <template>
   <div class="bg-dark-blue">
-    <div class="container mx-auto max-w-7xl py-32">
+    <div class="container mx-auto max-w-7xl py-16 xl:py-32">
       <div class="flex flex-col items-center max-w-2xl mx-auto">
         <span class="font-bold text-white">Contate-nos</span>
         <h1
@@ -15,7 +15,7 @@ export default {
           Entre em contato conosco, estamos aqui para ajudar a roteirizar sua
           próxima viagem
         </h1>
-        <form action="" class="w-full flex flex-col gap-2 px-10">
+        <form action="" class="w-full flex flex-col gap-2 xl:px-10">
           <input
             class="rounded-lg px-4 py-3 w-full"
             type="text"

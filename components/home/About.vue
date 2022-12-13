@@ -29,8 +29,9 @@ export default {
 <style lang="postcss" scoped>
 .container {
   @apply flex
-      py-32
-      gap-[60px]
+      py-16
+      xl:py-32
+      xl:gap-[60px]
       mx-auto
       items-center
       justify-center
@@ -76,7 +77,7 @@ export default {
 
   & .box-image {
     & .image {
-      @apply rounded-2xl;
+      @apply hidden xl:flex rounded-2xl;
     }
   }
 }

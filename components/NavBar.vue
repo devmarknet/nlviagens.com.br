@@ -42,7 +42,7 @@ export default {
         </li>
       </ul>
       <ul
-        :class="`flex gap-10 w-full flex-1 justify-center items-center ${
+        :class="`hidden xl:flex gap-10 w-full flex-1 justify-center items-center  ${
           scrolled
             ? 'text-dark-blue border-dark-blue'
             : 'text-white border-white'

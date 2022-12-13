@@ -47,7 +47,9 @@ export default {
     overflow-hidden;
   .container {
     @apply flex
-      py-60
+      pt-52
+      pb-16
+      xl:py-60
       mx-auto
       max-w-7xl
       items-center
@@ -61,7 +63,8 @@ export default {
           max-w-4xl;
       & .title {
         @apply font-title
-          text-7xl
+          text-5xl
+          xl:text-7xl
           text-white
           font-semibold;
       }

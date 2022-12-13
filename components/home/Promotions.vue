@@ -11,7 +11,7 @@ export default {
       <h2 class="title max-w-3xl">
         Sua viagem será melhor com as ofertas que selecionamos para você
       </h2>
-      <div class="w-full grid grid-cols-4 gap-8 py-10">
+      <div class="w-full grid grid-cols-2 xl:grid-cols-4 gap-4 xl:gap-9 py-10">
         <NuxtLink to="/">
           <img
             class="flex-1 rounded-lg overflow-hidden"
@@ -50,7 +50,8 @@ export default {
 .container {
   @apply bg-dark-blue
       flex
-      py-32
+      py-16
+      xl:py-32
       min-w-full
       mx-auto
       items-center
