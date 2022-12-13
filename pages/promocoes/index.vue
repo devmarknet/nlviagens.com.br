@@ -33,7 +33,7 @@ export default {
 
 <template>
   <div>
-    <header class="pt-40 pb-16 bg-darkest-blue mb-20">
+    <header class="pt-40 pb-16 bg-darkest-blue mb-10 xl:mb-20">
       <div class="container mx-auto max-w-7xl">
         <span class="w-20 border-t border-yellow block mx-auto"></span>
         <h1 class="text-center text-white my-6 text-4xl font-medium">
@@ -45,11 +45,13 @@ export default {
         </p>
       </div>
     </header>
-    <main class="container mx-auto max-w-7xl flex flex-col gap-20 mb-20">
+    <main
+      class="container mx-auto max-w-7xl flex flex-col gap-6 xl:gap-20 mb-10 xl:mb-20"
+    >
       <section v-for="pkg in promotionalPackages" :key="pkg.id">
         <div
           v-if="pkg.promotional_packages.length"
-          class="flex items-center gap-11"
+          class="flex flex-col xl:flex-row xl:items-center gap-4 xl:gap-11"
         >
           <h3 class="text-2xl font-title font-medium text-gray">
             {{ pkg.title }}
@@ -64,7 +66,7 @@ export default {
         </div>
         <div
           v-if="pkg.promotional_packages.length"
-          class="w-full grid grid-cols-4 gap-8 py-6"
+          class="w-full grid grid-cols-2 xl:grid-cols-4 gap-4 xl:gap-8 py-6"
         >
           <NuxtLink
             v-for="promo in pkg.promotional_packages"
