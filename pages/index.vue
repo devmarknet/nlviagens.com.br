@@ -40,6 +40,15 @@ export default {
             id
           }
         }
+        news {
+          id
+          cover {
+            id
+          }
+          title
+          slug
+          article
+        }
       }
     `
     const data = await $graphql.admin.request(query)
@@ -56,7 +65,7 @@ export default {
     <ServicesComponent />
     <PromotionsComponent />
     <AboutComponent :aboutProps="data" />
-    <NewsComponent />
+    <NewsComponent :news="data.news" />
     <Testimonials />
     <Contact />
   </main>

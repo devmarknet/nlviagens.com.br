@@ -1,48 +1,54 @@
 <script>
+import Swiper from 'swiper/swiper-bundle.min'
+import 'swiper/swiper-bundle.min.css'
+
 export default {
   name: 'NewsComponent',
+  props: {
+    news: {
+      type: Object,
+    },
+  },
+  mounted() {
+    new Swiper(this.$refs.swiper, {
+      // loop: true,
+      // autoplay: true,
+      slidesPerView: 2,
+      spaceBetween: 16,
+      breakpoints: {
+        1280: {
+          slidesPerView: 4,
+          spaceBetween: 32,
+        },
+      },
+    })
+  },
 }
 </script>
 
 <template>
   <div>
-    <div class="container mx-auto max-w-7xl flex-col">
-      <div class="box-content">
+    <div class="container mx-auto w-full xl:max-w-7xl flex-col">
+      <div class="box-content w-full relative">
         <span class="span">Notícias</span>
         <h2 class="title max-w-3xl">
           As últimas notícias nacionais e internacionais no mundo do turismo
         </h2>
-        <div class="w-full grid grid-cols-1 xl:grid-cols-4 gap-8 py-10">
-          <NuxtLink to="/">
-            <img
-              class="flex-1 rounded-lg overflow-hidden"
-              :src="require('~/assets/images/tour-intercontinental.jpeg')"
-              alt=""
-            />
-          </NuxtLink>
-          <NuxtLink to="/">
-            <img
-              class="flex-1 rounded-lg overflow-hidden"
-              :src="require('~/assets/images/ferias-em-familia.jpeg')"
-              alt=""
-            />
-          </NuxtLink>
-          <NuxtLink to="/">
-            <img
-              class="flex-1 rounded-lg overflow-hidden"
-              :src="require('~/assets/images/ferias-na-franca.jpeg')"
-              alt=""
-            />
-          </NuxtLink>
-          <NuxtLink to="/">
-            <img
-              class="flex-1 rounded-lg overflow-hidden hover:object-fill"
-              :src="require('~/assets/images/passagens-internacionais.jpeg')"
-              alt=""
-            />
-          </NuxtLink>
+        <div ref="swiper" class="swiper w-full max-w-7xl">
+          <div class="swiper-wrapper">
+            <div v-for="nw in news" :key="nw.id" class="swiper-slide w-max">
+              <NuxtLink :to="`noticias/${nw.slug}`" class="w-full">
+                <img
+                  class="flex-1 rounded-lg overflow-hidden w-auto"
+                  :src="`https://admin.nlviagens.com.br/assets/${nw.cover.id}`"
+                  alt=""
+                />
+                <h3 class="text-left font-medium mt-2">{{ nw.title }}</h3>
+              </NuxtLink>
+            </div>
+          </div>
         </div>
-        <NuxtLink class="button" to="/promocoes">Veja mais notícias</NuxtLink>
+        <NuxtLink class="button" to="/noticias">Veja mais notícias</NuxtLink>
       </div>
       <div class="box-content mt-32">
         <span class="span">Newsletter</span>

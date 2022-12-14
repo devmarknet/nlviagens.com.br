@@ -1,5 +1,6 @@
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
+  target: 'static',
   head: {
     title: 'NL Viagens Nilsara',
     htmlAttrs: {
@@ -65,5 +66,8 @@ export default {
         endpoint: `${process.env.BASE_URL}/assets`,
       },
     },
+  },
+  server: {
+    host: '0.0.0.0',
   },
 }

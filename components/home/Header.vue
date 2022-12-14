@@ -18,9 +18,12 @@ export default {
       <div class="box-info">
         <h1 class="title">{{ headerProps.main_section.title }}</h1>
         <p v-html="headerProps.main_section.sub_title" class="sub-title" />
-        <a class="button" :title="headerProps.main_section.action_text">{{
-          headerProps.main_section.action_text
-        }}</a>
+        <a
+          :href="headerProps.main_section.action"
+          class="button"
+          :title="headerProps.main_section.action_text"
+          >{{ headerProps.main_section.action_text }}</a
+        >
       </div>
     </div>
     <img
