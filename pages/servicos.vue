@@ -65,7 +65,7 @@ export default {
               {{ service.title }}
             </h2>
             <a
-              class="bg-yellow text-darkest-blue font-bold px-8 xl:px-3 xl:py-2 py-4 block w-max rounded-lg"
+              class="bg-yellow text-darkest-blue font-bold xl:px-8 px-3 py-2 xl:py-4 block w-max rounded-lg"
               href=""
               >Contrate</a
             >

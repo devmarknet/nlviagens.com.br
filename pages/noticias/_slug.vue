@@ -26,17 +26,10 @@ export default {
 
 <template>
   <div>
-    <header class="pt-40 pb-16 bg-darkest-blue mb-10">
-      <div class="container mx-auto max-w-7xl">
-        <span class="w-20 border-t border-yellow block mx-auto"></span>
-        <h1 class="text-center text-white mt-6 text-4xl font-medium">
-          Notícias
-        </h1>
-      </div>
-    </header>
-    <article class="max-w-2xl mx-auto">
+    <header class="pt-40 pb-6 bg-darkest-blue mb-10"></header>
+    <article class="max-w-2xl mx-auto px-4">
       <h2
-        class="text-2xl xl:text-4xl font-semibold text-gray text-center mx-auto"
+        class="text-3xl xl:text-4xl font-semibold text-gray text-center mx-auto"
       >
         {{ news.title }}
       </h2>
