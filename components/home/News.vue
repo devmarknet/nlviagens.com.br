@@ -6,7 +6,7 @@ export default {
   name: 'NewsComponent',
   props: {
     news: {
-      type: Object,
+      type: Array,
     },
   },
   mounted() {
