@@ -20,41 +20,54 @@ export default {
         alt="Footer Logo NL Viagens Nilsara"
       />
       <div class="flex-1 flex flex-col">
-        <div class="flex flex-col xl:flex-row flex-1 justify-between gap-4">
+        <div class="flex flex-col xl:flex-row flex-1 gap-4 xl:gap-20">
           <div>
             <h3 class="mb-4">Fale com um de nossos acessores</h3>
             <ul class="text-white/50 flex flex-col gap-3">
-              <li>(44) 9 9983-2345 - Juliana</li>
-              <li>(44) 9 9983-2345 - Juliana</li>
-              <li>(44) 9 9983-2345 - Juliana</li>
+              <li>
+                <a class="text-white hover:underline" href="tel:044936311690"
+                  >(44) 9 3631-1690</a
+                >
+                - Atendimento presencial com hora marcada
+              </li>
+              <li>
+                <a class="text-white hover:underline" href="04498800099"
+                  >(44) 99880-0099</a
+                >
+                - Nilsara
+              </li>
+              <li>
+                <a class="text-white hover:underline" href="44988249073"
+                  >(44) 98824-9073</a
+                >
+                - Ana Paula
+              </li>
             </ul>
           </div>
           <div>
             <h3 class="mb-4">Siga nossas redes</h3>
             <ul class="text-white/50 flex flex-col gap-3">
-              <li>Facebook</li>
-              <li>Instagram</li>
-              <li>Pinterest</li>
-            </ul>
-          </div>
-          <div>
-            <h3 class="mb-4">Institucional</h3>
-            <ul class="text-white/50 flex flex-col gap-3">
-              <li>A empresa</li>
-              <li>Notícias</li>
-              <li>Galeria</li>
-              <li>Contato</li>
-            </ul>
-          </div>
-          <div>
-            <h3 class="mb-4">Acesse</h3>
-            <ul class="text-white/50 flex flex-col gap-3">
-              <li>Promoções</li>
-              <li>Serviços</li>
+              <li>
+                <a
+                  href="http://www.facebook.com/nlviagensnilsara"
+                  target="_blank"
+                  >Facebook</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://instagram.com/nlviagenseturismo"
+                  target="_blank"
+                  >Instagram</a
+                >
+              </li>
             </ul>
           </div>
         </div>
-        <p>Copyright &copy; {{ year }}. NL Viagens Nilsara.</p>
+        <p>
+          Copyright &copy; {{ year }}. Nilsara Coelho Viagens e Turismo - NL
+          Viagens. CNPJ: 10.979.197/0001-06.
+        </p>
       </div>
     </div>
   </footer>

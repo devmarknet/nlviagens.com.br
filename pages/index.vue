@@ -2,6 +2,7 @@
 import { gql } from 'nuxt-graphql-request'
 import HeaderComponent from '@/components/home/Header.vue'
 import ServicesComponent from '@/components/home/Services.vue'
+import GaleryComponent from '@/components/home/Galery.vue'
 import PromotionsComponent from '@/components/home/Promotions.vue'
 import AboutComponent from '@/components/home/About.vue'
 import NewsComponent from '@/components/home/News.vue'
@@ -13,6 +14,7 @@ export default {
   components: {
     HeaderComponent,
     ServicesComponent,
+    GaleryComponent,
     PromotionsComponent,
     AboutComponent,
     NewsComponent,
@@ -49,6 +51,25 @@ export default {
           slug
           article
         }
+        services(filter: { status: { _eq: "published" } }) {
+          id
+          status
+          title
+          cover {
+            id
+          }
+          slug
+          meta_content
+          content
+        }
+        galery {
+          id
+          cover {
+            id
+          }
+          slug
+          title
+        }
       }
     `
     const data = await $graphql.admin.request(query)
@@ -62,8 +83,9 @@ export default {
 <template>
   <main>
     <HeaderComponent :headerProps="data" />
-    <ServicesComponent />
     <PromotionsComponent />
+    <ServicesComponent :items="data.services" />
+    <GaleryComponent :items="data.galery" />
     <AboutComponent :aboutProps="data" />
     <NewsComponent :news="data.news" />
     <Testimonials />

@@ -17,7 +17,20 @@ export default {
     <div class="box-text">
       <span class="span">Quem Somos</span>
       <h2 class="title">{{ aboutProps.about.title }}</h2>
-      <p class="text" v-html="aboutProps.about.text" />
+      <!-- <p class="text" v-html="aboutProps.about.text" /> -->
+      <article class="text">
+        <p>
+          Somos uma empresa com mais de 25 anos no mercado de viagens e turismo,
+          somos especialistas quando se trata de viagens nacionais,
+          internacionais e assessoria. Temos uma equipe altamente capacitada, e
+          consultores prontos para elaborar seu plano de viagem de modo que
+          atenda suas necessidades e torne sua experiência única.
+        </p>
+        <p class="mt-5">
+          Nossa empresa é conhecida pela qualidade, agilidade e satisfação em
+          nossos serviços
+        </p>
+      </article>
       <a class="button" href="/a-empresa" title="Conheça mais">Conheça mais</a>
     </div>
     <div class="box-image">

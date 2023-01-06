@@ -1,43 +1,9 @@
 <script>
 export default {
   name: 'ServicesComponent',
-  data() {
-    return {
-      items: [
-        {
-          url: '/servicos',
-          image: 'passagens-rodoviarias.jpeg',
-          list: ['Expresso Maringá', 'Viação Garcia', 'Brasil Sul'],
-          title: 'Passagens Rodoviárias',
-        },
-        {
-          url: '/servicos',
-          image: 'fretamento.jpeg',
-          list: [
-            'Fretamos para Grupos e/ou Empresas, aeronaves de pequeno, médio porte...',
-          ],
-          title: 'Fretamento',
-        },
-        {
-          url: '/servicos',
-          image: 'acessoria.jpeg',
-          list: ['Passaportes', 'Vacinas Internacionais', 'Visto Consular'],
-          title: 'Acessoria',
-        },
-        {
-          url: '/servicos',
-          image: 'corporativo.jpeg',
-          list: [
-            'Passagens aéreas',
-            'Terminiais de reserva online',
-            'Seguros de Viagens',
-          ],
-          title: 'Corporativo',
-        },
-      ],
-    }
+  props: {
+    items: Array,
   },
-  created() {},
 }
 </script>
 
@@ -53,28 +19,22 @@ export default {
         dá um diferencial na ampla demanda de nossos clientes.
       </p>
     </div>
-    <ul class="grid grid-cols-1 xl:grid-cols-4 gap-4 xl:gap-9">
-      <li v-for="i in items" :key="i.title" class="flex-1">
-        <NuxtLink :to="i.url">
+    <ul
+      class="flex grid-cols-1 xl:grid-cols-4 gap-4 xl:gap-9"
+      v-if="items.length"
+    >
+      <li v-for="i in items" :key="i.title" class="flex-1 flex-shrink">
+        <!-- <NuxtLink :to="i.slug"> -->
+        <NuxtLink to="/servicos">
           <div class="w-full relative rounded-t-lg overflow-hidden">
             <img
-              :src="require(`~/assets/images/${i.image}`)"
+              :src="`https://admin.nlviagens.com.br/assets/${i.cover.id}`"
               alt="Illustration Passagens Rodoviárias"
             />
-            <ul
-              v-if="typeof i.list === 'object'"
+            <div
+              v-html="i.content"
               class="absolute top-0 flex flex-col justify-end h-full w-full bg-black/30 text-white p-4"
-            >
-              <li v-for="item in i.list" :key="item">
-                {{ item }}
-              </li>
-            </ul>
-            <p
-              v-else
-              class="absolute top-0 flex flex-col justify-end h-full w-full bg-black/30 text-white p-4"
-            >
-              {{ item }}
-            </p>
+            />
           </div>
           <span
             class="flex bg-zinc-100 w-full text-sm font-title uppercase font-bold p-4 rounded-b-lg"

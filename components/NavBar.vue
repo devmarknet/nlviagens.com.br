@@ -51,14 +51,18 @@ export default {
         <li class="item">
           <NuxtLink class="link" to="/">Home</NuxtLink>
         </li>
-        <li class="item">
-          <NuxtLink class="link" to="/a-empresa">A Empresa</NuxtLink>
-        </li>
+
         <li class="item">
           <NuxtLink class="link" to="/promocoes">Promoções</NuxtLink>
         </li>
         <li class="item">
           <NuxtLink class="link" to="/servicos">Serviços</NuxtLink>
+        </li>
+        <li class="item">
+          <NuxtLink class="link" to="/galeria">Galeria de Fotos</NuxtLink>
+        </li>
+        <li class="item">
+          <NuxtLink class="link" to="/a-empresa">A Empresa</NuxtLink>
         </li>
         <!--
         <li class="item">
