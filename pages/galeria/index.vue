@@ -69,7 +69,7 @@ export default {
             </h2>
             <NuxtLink
               class="bg-yellow text-darkest-blue font-bold xl:px-8 px-3 py-2 xl:py-4 block w-max rounded-lg"
-              :to="`${service.slug}`"
+              :to="`/galeria/${service.slug}`"
               >Ver galeria</NuxtLink
             >
           </div>
