@@ -48,7 +48,7 @@ export default {
       </div>
     </header>
     <main
-      class="container mx-auto max-w-7xl flex grid-cols-1 xl:grid-cols-2 gap-4 xl:gap-8 mb-10 xl:mb-20"
+      class="container mx-auto max-w-7xl grid grid-cols-1 xl:grid-cols-2 gap-4 xl:gap-8 mb-10 xl:mb-20 items-stretch"
     >
       <div
         v-for="service in galeries"
@@ -64,11 +64,11 @@ export default {
           <div
             class="absolute flex w-full gap-2 items-end justify-between bottom-0 p-5 h-full bg-black/30"
           >
-            <h2 class="text-xl xl:text-3xl font-bold xl:w-64 text-white">
+            <h2 class="text-xl xl:text-3xl font-bold xl:w-64 text-white flex-1">
               {{ service.title }}
             </h2>
             <NuxtLink
-              class="bg-yellow text-darkest-blue font-bold xl:px-8 px-3 py-2 xl:py-4 block w-max rounded-lg"
+              class="bg-yellow text-darkest-blue font-bold xl:px-8 px-3 py-2 xl:py-4 block w-max rounded-lg text-center"
               :to="`/galeria/${service.slug}`"
               >Ver galeria</NuxtLink
             >

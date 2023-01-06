@@ -18,7 +18,7 @@ export default {
         </p>
       </div>
       <ul
-        class="flex grid-cols-1 xl:grid-cols-4 gap-4 xl:gap-9 items-stretch"
+        class="grid grid-cols-1 xl:grid-cols-4 gap-4 xl:gap-9 items-stretch"
         v-if="items.length"
       >
         <li v-for="i in items" :key="i.title" class="flex-1">
@@ -33,11 +33,11 @@ export default {
                 class="flex justify-between absolute top-0 w-full items-end h-full bg-black/30 p-4"
               >
                 <span
-                  class="text-white font-bold text-xl group-hover:scale-105 transition-transform duration-300"
+                  class="text-white font-bold text-xl group-hover:scale-105 transition-transform duration-300 flex-1"
                   >{{ i.title }}</span
                 >
                 <span
-                  class="bg-yellow text-darkest-blue font-bold xl:px-8 px-3 py-2 xl:py-4 block w-max rounded-lg"
+                  class="bg-yellow text-darkest-blue font-bold xl:px-8 px-3 py-2 xl:py-4 block rounded-lg w-max text-center"
                   >Ver galeria</span
                 >
               </div>
