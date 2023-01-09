@@ -18,7 +18,7 @@ export default {
         </p>
       </div>
       <ul
-        class="grid grid-cols-1 xl:grid-cols-4 gap-4 xl:gap-9 items-stretch"
+        class="grid grid-cols-1 xl:grid-cols-2 gap-4 xl:gap-9 items-stretch"
         v-if="items.length"
       >
         <li v-for="i in items" :key="i.title" class="flex-1">

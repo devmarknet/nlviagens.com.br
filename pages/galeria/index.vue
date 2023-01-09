@@ -48,12 +48,12 @@ export default {
       </div>
     </header>
     <main
-      class="container mx-auto max-w-7xl grid grid-cols-1 xl:grid-cols-2 gap-4 xl:gap-8 mb-10 xl:mb-20 items-stretch"
+      class="container mx-auto max-w-7xl grid grid-cols-1 md:grid-cols-2 gap-4 xl:gap-8 mb-10 xl:mb-20 items-stretch"
     >
       <div
         v-for="service in galeries"
         :key="service.id"
-        class="border flex-1 rounded-xl border-zinc-200 w-auto xl:w-max overflow-hidden group"
+        class="border flex-1 rounded-xl border-zinc-200 w-auto overflow-hidden group"
       >
         <div class="relative h-full w-full">
           <img
