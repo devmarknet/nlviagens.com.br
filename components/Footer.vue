@@ -68,6 +68,10 @@ export default {
           Copyright &copy; {{ year }}. Nilsara Coelho Viagens e Turismo - NL
           Viagens. CNPJ: 10.979.197/0001-06.
         </p>
+        <div class="mt-20 flex items-center">
+          <span class="text-xs text-white/50 mr-4 -mt-1">Desenvolvido por:</span
+          ><a href="https://marknet.com.br" target="_blank"><MarknetLogo /></a>
+        </div>
       </div>
     </div>
   </footer>
