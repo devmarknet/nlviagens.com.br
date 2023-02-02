@@ -15,7 +15,7 @@ export default {
       class="container mx-auto max-w-7xl flex flex-col xl:flex-row items-stretch justify-between gap-10"
     >
       <img
-        class="w-40 xl:w-auto"
+        class="w-40 h-40 xl:w-auto"
         :src="require('~/assets/images/footer-logo.png')"
         alt="Footer Logo NL Viagens Nilsara"
       />
