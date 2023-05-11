@@ -53,7 +53,7 @@ export default {
     track: 'PageView',
     pixelId: '758928589222147',
     autoPageView: true,
-    debug: true,
+    debug: false,
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
