@@ -45,7 +45,16 @@ export default {
   }, */
 
   // Modules: https://go.nuxtjs.dev/config-modules
-  modules: [],
+  modules: [
+    'nuxt-facebook-pixel-module',
+  ],
+
+  facebook: {
+    track: 'PageView',
+    pixelId: '758928589222147',
+    autoPageView: true,
+    debug: true,
+  },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {

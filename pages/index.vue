@@ -82,11 +82,11 @@ export default {
 
 <template>
   <main>
-    <HeaderComponent :headerProps="data" />
+    <HeaderComponent :header-props="data" />
     <PromotionsComponent />
     <ServicesComponent :items="data.services" />
     <GaleryComponent :items="data.galery" />
-    <AboutComponent :aboutProps="data" />
+    <AboutComponent :about-props="data" />
     <NewsComponent :news="data.news" />
     <Testimonials />
     <Contact />
